@@ -1,2 +1,2 @@
 #Type your Open-AI token below, surrounded by quotes.
-openai_token: "OPEN-AI-KEY"
+groq_api_token: "GROQ-AI-KEY"

@@ -1,4 +1,4 @@
-package org.derewah.skriptgpt.expressions;
+package org.kerkkoh.skriptgroq.expressions;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.lang.Expression;
@@ -7,13 +7,13 @@ import ch.njol.skript.lang.SkriptParser;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import org.bukkit.event.Event;
-import org.derewah.skriptgpt.types.ConversationMessage;
-
+import org.kerkkoh.skriptgroq.types.ConversationMessage;
 
 public class ExprNewConversationMessage extends SimpleExpression<ConversationMessage> {
 
     static {
-        Skript.registerExpression(ExprNewConversationMessage.class, ConversationMessage.class, ExpressionType.SIMPLE, "[a] new conversation message [with role user]",
+        Skript.registerExpression(ExprNewConversationMessage.class, ConversationMessage.class, ExpressionType.SIMPLE,
+                "[a] new conversation message [with role user]",
                 "[a] new conversation message with role assistant",
                 "[a] new conversation message with role system");
     }
@@ -21,7 +21,7 @@ public class ExprNewConversationMessage extends SimpleExpression<ConversationMes
     private String role;
 
     @Override
-    protected ConversationMessage[] get(Event e){
+    protected ConversationMessage[] get(Event e) {
         ConversationMessage cv = new ConversationMessage();
         cv.role = role;
         cv.content = null;
@@ -29,30 +29,30 @@ public class ExprNewConversationMessage extends SimpleExpression<ConversationMes
     }
 
     @Override
-    public boolean init(Expression<?>[] expr, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
-        if (matchedPattern == 0){
+    public boolean init(Expression<?>[] expr, int matchedPattern, Kleenean isDelayed,
+            SkriptParser.ParseResult parseResult) {
+        if (matchedPattern == 0) {
             role = "user";
-        }else if (matchedPattern == 1){
+        } else if (matchedPattern == 1) {
             role = "assistant";
-        }else if (matchedPattern == 2){
+        } else if (matchedPattern == 2) {
             role = "system";
         }
         return true;
     }
 
     @Override
-    public boolean isSingle(){
+    public boolean isSingle() {
         return true;
     }
 
     @Override
-    public Class<? extends ConversationMessage> getReturnType(){
+    public Class<? extends ConversationMessage> getReturnType() {
         return ConversationMessage.class;
     }
 
-
     @Override
-    public String toString(Event e, boolean debug){
+    public String toString(Event e, boolean debug) {
         return "new conversation message";
     }
 

@@ -1,4 +1,4 @@
-package org.derewah.skriptgpt;
+package org.kerkkoh.skriptgroq;
 
 import org.bstats.bukkit.Metrics;
 import ch.njol.skript.Skript;
@@ -10,21 +10,21 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
 
-public class SkriptGPT extends JavaPlugin {
+public class SkriptGroq extends JavaPlugin {
 
-    static SkriptGPT instance;
+    static SkriptGroq instance;
     SkriptAddon addon;
 
     public static FileConfiguration config;
-    public void onEnable(){
+
+    public void onEnable() {
         instance = this;
         addon = Skript.registerAddon(this);
         try {
-            addon.loadClasses("org.derewah.skriptgpt");
-        } catch(IOException e){
+            addon.loadClasses("org.kerkkoh.skriptgroq");
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         if (!getDataFolder().exists()) {
             saveDefaultConfig();
@@ -32,32 +32,25 @@ public class SkriptGPT extends JavaPlugin {
 
         reloadConfig();
 
-
         // Register Metrics
         Metrics metrics = new Metrics(this, 18068);
 
-        metrics.addCustomChart(new SimplePie("skript_version", () ->
-                Bukkit.getServer().getPluginManager().getPlugin("Skript").getDescription().getVersion()));
-        metrics.addCustomChart(new SimplePie("skript-gpt_version", () ->
-                this.getDescription().getVersion()));
+        metrics.addCustomChart(new SimplePie("skript_version",
+                () -> Bukkit.getServer().getPluginManager().getPlugin("Skript").getDescription().getVersion()));
+        metrics.addCustomChart(new SimplePie("skript-groq_version", () -> this.getDescription().getVersion()));
 
+        getCommand("skriptgroq").setExecutor(new Commands(this));
 
-        getCommand("skriptgpt").setExecutor(new Commands(this));
-
-
-        Bukkit.getLogger().info("[SkriptGPT] has been enabled!");
-
-
-
+        Bukkit.getLogger().info("[SkriptGroq] has been enabled!");
 
     }
 
-    public static SkriptGPT getInstance(){
+    public static SkriptGroq getInstance() {
 
         return instance;
     }
 
-    public SkriptAddon getAddonInstance(){
+    public SkriptAddon getAddonInstance() {
         return addon;
     }
 
@@ -70,7 +63,5 @@ public class SkriptGPT extends JavaPlugin {
         config.options().copyDefaults(true);
         saveConfig();
     }
-
-
 
 }

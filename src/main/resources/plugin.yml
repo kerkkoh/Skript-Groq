@@ -1,9 +1,9 @@
-name: Skript-GPT
-author: DereWah
-description: A skript to interface with the OpenAI GPT API.
-version: 1.1
-main: org.derewah.skriptgpt.SkriptGPT
+name: Skript-Groq
+author: Kerkkoh
+description: A skript to interface with the Groq API.
+version: 1.0
+main: org.kerkkoh.skriptgroq.SkriptGroq
 depend: [Skript]
 commands:
-  skriptgpt:
-    description: The commands from SkriptGPT.
+  skriptgroq:
+    description: The commands from SkriptGroq.
