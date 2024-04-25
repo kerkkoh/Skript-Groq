@@ -1,7 +1,9 @@
 
 # Skript-Groq ![Downloads](https://img.shields.io/github/downloads/kerkkoh/Skript-Groq/total)
 
-A Skript Addon that allows users to interface with the [Groq API](https://wow.groq.com/) and lets them send completion requests. This is based on the original [Skript-GPT](https://github.com/DereWah/Skript-GPT) addon by DereWah. It uses the exact same Skript syntax (API) so it should be a drop-in replacement for the original addon.
+Imagine this, free AI 🤑, the fastest AI in the entire market 🏎️, and the latest open source models like Mixtral-8x7B 🔥 and Llama 3 8B/70B 🦙... Well, imagine no more, it's reality with [Groq](https://wow.groq.com/) 🎉💜 Almost instant AI completions, as of now free (and when priced, it's still the lowest price on the market), and the latest and best OS models.
+
+Skript-Groq is a Skript Addon that allows users to interface with the [Groq API](https://wow.groq.com/) and lets them send completion requests. This is based on the original [Skript-GPT](https://github.com/DereWah/Skript-GPT) addon by DereWah. It uses the exact same Skript syntax (API) so it should be a drop-in replacement for the original addon, except for completions being deprecated, as all Groq models use a chat API.
 
 
 ## Documentation
@@ -213,26 +215,19 @@ See the FAQ below to learn how to get your API Key.
 
 #### How do I get an API key?
 
-To get an API key, simply create an OpenAI account here:
-https://platform.openai.com/signup
+Create an account with GitHub/Google/etc. at https://console.groq.com and then navigate to https://console.groq.com/keys
 
-After your account is created, you'll be granted 5$ in free trial credits that you will be able to use anywhere. From your OpenAI overview, go to Personal and click on View API keys. From there just create a key and copy it into the config. 
+As of 2024-04-21, you will be able to use the API for free, with [rather low rate limits](https://console.groq.com/settings/limits).
+
+See the pricing [here](https://wow.groq.com/#:~:text=with%20you%20shortly.-,Price,-Groq%20guarantees%20to), which is incredibly cheap.
 
 #### What is the ChatCompletion effect?
 
-The ChatCompletion will always pretend to be an assistant, and will try to respond to you as in a chat. It's basically what ChatGPT is. A prompt like "Who are you" will result in "Hi! I am an helpful assistant from Mistral...".
+The ChatCompletion will always pretend to be an assistant, and will try to respond to you as in a chat. It's basically what ChatGPT is. A prompt like "Who are you" will result in "Hi! I am an helpful assistant from Mistral..." (this is the case with the default model).
 
 [Groq's documentation](https://console.groq.com/docs)
 
-#### Do I have to pay for the API to actually use this?
-
-See the pricing [here](https://wow.groq.com/#:~:text=with%20you%20shortly.-,Price,-Groq%20guarantees%20to), which is incredibly cheap. However, as of 2024-04-21, you will be able to use the API for free, with [rather low rate limits](https://console.groq.com/settings/limits).
-
-This addon of course is completely free and uses your API key to make requests.
-
-If you create an assistant service in your server to allow players to "chat" with Groq, remember to add some sort of delay or limit to how much users can use the assistant. Remember that completions are being sent with your api key, so players might consume your credit really quickly.
-
 #### Does the Groq effect remember my previous conversation?
 
-At this moment, every prompt sent to Groq (With the Chat Completion Effect) will be from a new conversation. So saying "I am DereWah" and then "Who Am I?" will result in inconsistent answers. It will be definetely be added in the next updates of the addon.
+At this moment, every prompt sent to Groq (With the Chat Completion Effect) will be from a new conversation. There's no conversation persistence.
 
