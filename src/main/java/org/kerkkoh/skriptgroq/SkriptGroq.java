@@ -33,7 +33,7 @@ public class SkriptGroq extends JavaPlugin {
         reloadConfig();
 
         // Register Metrics
-        Metrics metrics = new Metrics(this, 18068);
+        Metrics metrics = new Metrics(this, 21702);
 
         metrics.addCustomChart(new SimplePie("skript_version",
                 () -> Bukkit.getServer().getPluginManager().getPlugin("Skript").getDescription().getVersion()));
