@@ -3,7 +3,7 @@
 
 Imagine this, free AI 🤑, the fastest AI in the entire market 🏎️, and the latest open source models like Mixtral-8x7B 🔥 and Llama 3 8B/70B 🦙... Well, imagine no more, it's reality with [Groq](https://wow.groq.com/) 🎉💜 Almost instant AI completions, as of now free (and when priced, it's still the lowest price on the market), and the latest and best OS models.
 
-Skript-Groq is a Skript Addon that allows users to interface with the [Groq API](https://wow.groq.com/) and lets them send completion requests. This is based on the original [Skript-GPT](https://github.com/DereWah/Skript-GPT) addon by DereWah. It uses the exact same Skript syntax (API) so it should be a drop-in replacement for the original addon, except for completions being deprecated, as all Groq models use a chat API.
+Skript-Groq is a [SkriptLang](https://github.com/SkriptLang) addon that allows users to interface with the [Groq API](https://wow.groq.com/) and lets them send completion requests. This is based on the original [Skript-GPT](https://github.com/DereWah/Skript-GPT) addon by DereWah. It uses the exact same Skript syntax (API) so it should be a drop-in replacement for the original addon, except for completions being deprecated, as all Groq models use a chat API.
 
 
 ## Documentation
